@@ -6,9 +6,6 @@ import Link from "next/link";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/blog", label: "Blog" },
-  { href: "/articles/the-60-minute-rule", label: "The 60-Minute Rule" },
-  { href: "/articles/four-seasons", label: "Four Seasons" },
-  { href: "/articles/geographic-jackpot", label: "Geographic Jackpot" },
   { href: "/contact", label: "Contact" },
 ];
 

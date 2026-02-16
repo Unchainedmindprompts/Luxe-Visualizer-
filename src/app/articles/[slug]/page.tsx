@@ -5,6 +5,7 @@ import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getArticleBySlug, getArticleSlugs } from "@/lib/articles";
 import { generateArticleSchema } from "@/lib/schema";
+import AuthorBio from "@/components/sections/AuthorBio";
 
 interface ArticlePageProps {
   params: { slug: string };
@@ -143,6 +144,9 @@ export default function ArticlePage({ params }: ArticlePageProps) {
           <MDXRemote source={content} components={mdxComponents} />
         </div>
       </article>
+
+      {/* Author Bio */}
+      <AuthorBio />
 
       {/* Bottom CTA */}
       <section className="py-16 bg-pine-50 border-t border-pine-100">

@@ -20,6 +20,8 @@ const initialFormData: FormData = {
   message: "",
 };
 
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "";
+
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -29,13 +31,25 @@ export default function ContactForm() {
     setStatus("submitting");
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `New Relocation Inquiry from ${formData.name}`,
+          from_name: "Basecamp INW Website",
+          replyto: formData.email,
+          Name: formData.name,
+          Email: formData.email,
+          Phone: formData.phone || "Not provided",
+          "Relocation Timeline": formData.timeline || "Not specified",
+          "Primary Interest": formData.interests || "Not specified",
+          Message: formData.message,
+        }),
       });
 
-      if (!response.ok) throw new Error("Failed to send");
+      const data = await response.json();
+      if (!data.success) throw new Error("Submission failed");
 
       setStatus("success");
       setFormData(initialFormData);
@@ -53,10 +67,11 @@ export default function ContactForm() {
           </svg>
         </div>
         <h3 className="font-display text-2xl font-bold text-slate-950 mb-2">
-          Message Sent
+          Message Sent!
         </h3>
         <p className="text-slate-700">
-          We&apos;ll be in touch within 24 hours to start planning your relocation.
+          Thanks for reaching out! Shirin will be in touch within 24 hours to
+          start planning your relocation.
         </p>
       </div>
     );
@@ -122,11 +137,11 @@ export default function ContactForm() {
             className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-pine-500 focus:border-transparent transition-shadow"
           >
             <option value="">Select timeline</option>
-            <option value="0-3">Within 3 months</option>
-            <option value="3-6">3 to 6 months</option>
-            <option value="6-12">6 to 12 months</option>
-            <option value="12+">12+ months</option>
-            <option value="exploring">Just exploring</option>
+            <option value="Within 3 months">Within 3 months</option>
+            <option value="3 to 6 months">3 to 6 months</option>
+            <option value="6 to 12 months">6 to 12 months</option>
+            <option value="12+ months">12+ months</option>
+            <option value="Just exploring">Just exploring</option>
           </select>
         </div>
       </div>
@@ -143,12 +158,12 @@ export default function ContactForm() {
           className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-pine-500 focus:border-transparent transition-shadow"
         >
           <option value="">Select primary interest</option>
-          <option value="mountain-biking">Mountain Biking & Trail Riding</option>
-          <option value="water-sports">Lake & Water Sports</option>
-          <option value="skiing">Skiing & Snowboarding</option>
-          <option value="hiking">Hiking & Backpacking</option>
-          <option value="family">Family-Friendly Community</option>
-          <option value="all">All of the Above</option>
+          <option value="Mountain Biking & Trail Riding">Mountain Biking & Trail Riding</option>
+          <option value="Lake & Water Sports">Lake & Water Sports</option>
+          <option value="Skiing & Snowboarding">Skiing & Snowboarding</option>
+          <option value="Hiking & Backpacking">Hiking & Backpacking</option>
+          <option value="Family-Friendly Community">Family-Friendly Community</option>
+          <option value="All of the Above">All of the Above</option>
         </select>
       </div>
 
@@ -171,7 +186,10 @@ export default function ContactForm() {
       {/* Error */}
       {status === "error" && (
         <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-700">
-          Something went wrong. Please try again or email us directly.
+          Something went wrong. Please try again or email us directly at{" "}
+          <a href="mailto:dreamlifeinidhao@gmail.com" className="font-semibold underline">
+            dreamlifeinidhao@gmail.com
+          </a>.
         </div>
       )}
 

@@ -51,8 +51,8 @@ const articleSchemaData: Record<string, ArticleSchemaData> = {
     mentions: [
       { "@type": "LocalBusiness", name: "Daft Badger Brewing", description: "Brewery and restaurant in Coeur d'Alene, Idaho" },
       { "@type": "LocalBusiness", name: "Vantage Point Brewing", description: "Brewery with patio dining in Coeur d'Alene, Idaho" },
-      { "@type": "Event", name: "Art on the Green", description: "Annual arts festival at North Idaho College in Coeur d'Alene" },
-      { "@type": "Event", name: "Coeur d'Alene Holiday Lighting Ceremony", description: "Annual holiday lighting event the Friday after Thanksgiving" },
+      { "@type": "Thing", name: "Art on the Green", description: "Annual arts festival at North Idaho College in Coeur d'Alene, held each August" },
+      { "@type": "Thing", name: "Coeur d'Alene Holiday Lighting Ceremony", description: "Annual holiday lighting event the Friday after Thanksgiving in downtown Coeur d'Alene" },
     ],
     faqs: [
       {

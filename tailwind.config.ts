@@ -84,8 +84,53 @@ const config: Config = {
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            "--tw-prose-body": "var(--tw-slate-900, #0f172a)",
+            "--tw-prose-headings": "var(--tw-slate-950, #020617)",
+            "--tw-prose-links": "#276b50",
+            "--tw-prose-bold": "var(--tw-slate-950, #020617)",
+            "--tw-prose-quotes": "var(--tw-slate-700, #334155)",
+            "--tw-prose-quote-borders": "#378565",
+            color: "#0f172a",
+            a: {
+              color: "#276b50",
+              fontWeight: "500",
+              textDecoration: "underline",
+              textDecorationColor: "rgba(39, 107, 80, 0.3)",
+              textUnderlineOffset: "2px",
+              "&:hover": {
+                color: "#205642",
+                textDecorationColor: "#205642",
+              },
+            },
+            h1: {
+              color: "#020617",
+              fontWeight: "700",
+            },
+            h2: {
+              color: "#020617",
+              fontWeight: "700",
+              marginTop: "2.5em",
+            },
+            h3: {
+              color: "#020617",
+              fontWeight: "700",
+            },
+            strong: {
+              color: "#020617",
+              fontWeight: "600",
+            },
+            blockquote: {
+              borderLeftColor: "#378565",
+              color: "#334155",
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
 export default config;

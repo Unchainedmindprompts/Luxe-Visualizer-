@@ -29,27 +29,27 @@ body {
 
 @layer components {
   .prose-basecamp h1 {
-    @apply font-display text-4xl md:text-5xl font-bold tracking-tight text-slate-900;
+    @apply font-display text-4xl md:text-5xl font-bold tracking-tight text-slate-950;
   }
 
   .prose-basecamp h2 {
-    @apply font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mt-12 mb-6;
+    @apply font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-950 mt-20 mb-6;
   }
 
   .prose-basecamp h3 {
-    @apply font-display text-2xl font-semibold text-slate-800 mt-8 mb-4;
+    @apply font-display text-2xl font-bold text-slate-950 mt-12 mb-4;
   }
 
   .prose-basecamp p {
-    @apply text-lg leading-relaxed text-slate-700 mb-6;
+    @apply text-lg leading-relaxed text-slate-900 mb-6;
   }
 
   .prose-basecamp ul {
-    @apply list-disc list-inside space-y-2 text-slate-700 mb-6;
+    @apply list-disc list-inside space-y-2 text-slate-900 mb-6;
   }
 
   .prose-basecamp blockquote {
-    @apply border-l-4 border-pine-500 pl-6 italic text-slate-600 my-8;
+    @apply border-l-4 border-pine-500 pl-6 italic text-slate-700 my-10;
   }
 }
 

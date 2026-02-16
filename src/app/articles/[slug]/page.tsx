@@ -47,34 +47,34 @@ export async function generateMetadata({
 
 const mdxComponents = {
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h1 className="font-display text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6" {...props} />
+    <h1 className="font-display text-4xl md:text-5xl font-bold tracking-tight text-slate-950 mb-8" {...props} />
   ),
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mt-16 mb-6" {...props} />
+    <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-950 mt-20 mb-6" {...props} />
   ),
   h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h3 className="font-display text-2xl font-semibold text-slate-800 mt-10 mb-4" {...props} />
+    <h3 className="font-display text-2xl font-bold text-slate-950 mt-12 mb-4" {...props} />
   ),
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p className="text-lg leading-relaxed text-slate-700 mb-6" {...props} />
+    <p className="text-lg leading-relaxed text-slate-900 mb-6" {...props} />
   ),
   ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
-    <ul className="list-disc list-outside ml-6 space-y-2 text-lg text-slate-700 mb-6" {...props} />
+    <ul className="list-disc list-outside ml-6 space-y-2 text-lg text-slate-900 mb-6" {...props} />
   ),
   ol: (props: React.HTMLAttributes<HTMLOListElement>) => (
-    <ol className="list-decimal list-outside ml-6 space-y-2 text-lg text-slate-700 mb-6" {...props} />
+    <ol className="list-decimal list-outside ml-6 space-y-2 text-lg text-slate-900 mb-6" {...props} />
   ),
   li: (props: React.HTMLAttributes<HTMLLIElement>) => (
     <li className="leading-relaxed" {...props} />
   ),
   blockquote: (props: React.HTMLAttributes<HTMLQuoteElement>) => (
-    <blockquote className="border-l-4 border-pine-500 pl-6 italic text-slate-600 my-8 text-lg" {...props} />
+    <blockquote className="border-l-4 border-pine-500 pl-6 italic text-slate-700 my-10 text-lg" {...props} />
   ),
   strong: (props: React.HTMLAttributes<HTMLElement>) => (
-    <strong className="font-semibold text-slate-900" {...props} />
+    <strong className="font-semibold text-slate-950" {...props} />
   ),
   a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-    <a className="text-pine-600 underline underline-offset-2 hover:text-pine-700 transition-colors" {...props} />
+    <a className="text-pine-600 font-medium underline decoration-pine-600/30 underline-offset-2 hover:decoration-pine-600 hover:text-pine-700 transition-colors" {...props} />
   ),
 };
 
@@ -115,7 +115,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-slate-900/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 w-full">
           {frontmatter.tags && (
             <div className="flex flex-wrap gap-2 mb-4">

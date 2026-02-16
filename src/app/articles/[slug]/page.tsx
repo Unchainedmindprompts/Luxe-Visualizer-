@@ -104,8 +104,8 @@ export default function ArticlePage({ params }: ArticlePageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      {/* Hero */}
-      <section className="relative h-[50vh] min-h-[400px] flex items-end">
+      {/* Hero — dual-layer overlay matches homepage for consistent nav/text protection */}
+      <section className="relative h-[50vh] min-h-[400px] flex items-end overflow-hidden">
         <Image
           src={frontmatter.image}
           alt={frontmatter.imageAlt}
@@ -115,7 +115,8 @@ export default function ArticlePage({ params }: ArticlePageProps) {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-900/30 to-slate-900/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/30 to-transparent" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 w-full">
           {frontmatter.tags && (
             <div className="flex flex-wrap gap-2 mb-4">
@@ -129,17 +130,17 @@ export default function ArticlePage({ params }: ArticlePageProps) {
               ))}
             </div>
           )}
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight drop-shadow-sm">
             {frontmatter.title}
           </h1>
-          <p className="mt-4 text-lg text-white/80 max-w-2xl">
+          <p className="mt-4 text-lg text-white/90 max-w-2xl drop-shadow-sm">
             {frontmatter.description}
           </p>
         </div>
       </section>
 
-      {/* Article Content */}
-      <article className="py-16 md:py-24">
+      {/* Article Content — explicit white background matches homepage sections */}
+      <article className="py-16 md:py-24 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <MDXRemote source={content} components={mdxComponents} />
         </div>
@@ -151,10 +152,10 @@ export default function ArticlePage({ params }: ArticlePageProps) {
       {/* Bottom CTA */}
       <section className="py-16 bg-pine-50 border-t border-pine-100">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-slate-950 mb-4">
             Ready to See It for Yourself?
           </h2>
-          <p className="text-lg text-slate-600 mb-8">
+          <p className="text-lg text-slate-700 mb-8">
             Connect with your Relocation Scout and start exploring Northern Idaho.
           </p>
           <Link

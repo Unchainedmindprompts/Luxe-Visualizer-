@@ -17,7 +17,7 @@ const activities = [
     title: "Skiing & Snowboarding",
     description: "Schweitzer Mountain, Silver Mountain, and Lookout Pass deliver legendary Pacific Northwest powder.",
     image: "/images/skiing.jpg",
-    imageAlt: "Skier carving fresh powder at a Northern Idaho ski resort with mountain views",
+    imageAlt: "Skier launching off a powder-covered slope with snow spraying against a bright blue sky and mountain backdrop",
   },
   {
     title: "Community & Culture",

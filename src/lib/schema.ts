@@ -9,6 +9,16 @@ export function generateLocalBusinessSchema() {
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     image: `${SITE_URL}/images/og-basecamp.jpg`,
+    telephone: "+1-208-660-7468",
+    email: "dreamlifeinidhao@gmail.com",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+1-208-660-7468",
+      email: "dreamlifeinidhao@gmail.com",
+      contactType: "customer service",
+      areaServed: "US",
+      availableLanguage: "English",
+    },
     address: {
       "@type": "PostalAddress",
       addressLocality: "Coeur d'Alene",
@@ -70,6 +80,16 @@ export function generateRealEstateAgentSchema() {
       "Relocation Scout specializing in lifestyle-driven real estate in Northern Idaho's Coeur d'Alene and Post Falls region.",
     url: SITE_URL,
     image: `${SITE_URL}/images/og-basecamp.jpg`,
+    telephone: "+1-208-660-7468",
+    email: "dreamlifeinidhao@gmail.com",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+1-208-660-7468",
+      email: "dreamlifeinidhao@gmail.com",
+      contactType: "customer service",
+      areaServed: "US",
+      availableLanguage: "English",
+    },
     address: {
       "@type": "PostalAddress",
       addressLocality: "Coeur d'Alene",

@@ -85,8 +85,27 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <a
+                  href="tel:+12086607468"
+                  className="text-sm text-slate-400 hover:text-pine-400 transition-colors"
+                >
+                  (208) 660-7468
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:dreamlifeinidhao@gmail.com"
+                  className="text-sm text-slate-400 hover:text-pine-400 transition-colors"
+                >
+                  dreamlifeinidhao@gmail.com
+                </a>
+              </li>
             </ul>
             <div className="mt-6">
+              <p className="text-sm text-slate-400">
+                Shirin Abplanalp — Founder
+              </p>
               <p className="text-sm text-slate-400">
                 Coeur d&apos;Alene &amp; Post Falls, Idaho
               </p>

@@ -4,7 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getArticleBySlug, getArticleSlugs } from "@/lib/articles";
-import { generateArticleSchema } from "@/lib/schema";
+import {
+  generateArticleSchema,
+  generateFAQSchema,
+  generateBreadcrumbSchema,
+} from "@/lib/schema";
+import { getArticleSchemaData } from "@/lib/article-schema-data";
 import AuthorBio from "@/components/sections/AuthorBio";
 
 interface ArticlePageProps {
@@ -88,6 +93,8 @@ export default function ArticlePage({ params }: ArticlePageProps) {
 
   const { frontmatter, content } = article;
 
+  const richData = getArticleSchemaData(params.slug);
+
   const articleSchema = generateArticleSchema({
     title: frontmatter.title,
     description: frontmatter.description,
@@ -95,7 +102,23 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     datePublished: frontmatter.date,
     dateModified: frontmatter.updated,
     image: frontmatter.image,
+    keywords: richData?.keywords,
+    about: richData?.about,
+    mentions: richData?.mentions,
   });
+
+  const faqSchema = richData?.faqs
+    ? generateFAQSchema(richData.faqs)
+    : null;
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", path: "" },
+    { name: "Blog", path: "/blog" },
+    {
+      name: richData?.breadcrumbTitle || frontmatter.title,
+      path: `/articles/${params.slug}`,
+    },
+  ]);
 
   return (
     <>
@@ -103,6 +126,16 @@ export default function ArticlePage({ params }: ArticlePageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       {/* Hero — dual-layer overlay matches homepage for consistent nav/text protection */}
       <section className="relative h-[50vh] min-h-[400px] flex items-end overflow-hidden">

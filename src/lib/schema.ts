@@ -148,6 +148,9 @@ export function generateArticleSchema(article: {
   datePublished: string;
   dateModified?: string;
   image?: string;
+  keywords?: string[];
+  about?: Record<string, unknown>[];
+  mentions?: Record<string, unknown>[];
 }) {
   return {
     "@context": "https://schema.org",
@@ -176,5 +179,43 @@ export function generateArticleSchema(article: {
       "@type": "WebPage",
       "@id": `${SITE_URL}/articles/${article.slug}`,
     },
+    ...(article.keywords && { keywords: article.keywords }),
+    ...(article.about && { about: article.about }),
+    ...(article.mentions && { mentions: article.mentions }),
+  };
+}
+
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export function generateFAQSchema(faqs: FAQItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function generateBreadcrumbSchema(
+  items: { name: string; path: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${SITE_URL}${item.path}`,
+    })),
   };
 }

@@ -95,10 +95,10 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:dreamlifeinidhao@gmail.com"
+                  href="mailto:dreamlifeinidaho@gmail.com"
                   className="text-sm text-slate-400 hover:text-pine-400 transition-colors"
                 >
-                  dreamlifeinidhao@gmail.com
+                  dreamlifeinidaho@gmail.com
                 </a>
               </li>
             </ul>

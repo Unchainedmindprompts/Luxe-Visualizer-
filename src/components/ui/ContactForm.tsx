@@ -187,8 +187,8 @@ export default function ContactForm() {
       {status === "error" && (
         <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-700">
           Something went wrong. Please try again or email us directly at{" "}
-          <a href="mailto:dreamlifeinidhao@gmail.com" className="font-semibold underline">
-            dreamlifeinidhao@gmail.com
+          <a href="mailto:dreamlifeinidaho@gmail.com" className="font-semibold underline">
+            dreamlifeinidaho@gmail.com
           </a>.
         </div>
       )}

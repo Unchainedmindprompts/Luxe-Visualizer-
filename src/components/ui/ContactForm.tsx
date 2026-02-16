@@ -52,10 +52,10 @@ export default function ContactForm() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
           </svg>
         </div>
-        <h3 className="font-display text-2xl font-bold text-slate-900 mb-2">
+        <h3 className="font-display text-2xl font-bold text-slate-950 mb-2">
           Message Sent
         </h3>
-        <p className="text-slate-600">
+        <p className="text-slate-700">
           We&apos;ll be in touch within 24 hours to start planning your relocation.
         </p>
       </div>
@@ -67,7 +67,7 @@ export default function ContactForm() {
       {/* Name & Email */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
+          <label htmlFor="name" className="block text-sm font-semibold text-slate-900 mb-2">
             Full Name *
           </label>
           <input
@@ -76,12 +76,12 @@ export default function ContactForm() {
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pine-500 focus:border-transparent transition-shadow"
+            className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pine-500 focus:border-transparent transition-shadow"
             placeholder="Your name"
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
+          <label htmlFor="email" className="block text-sm font-semibold text-slate-900 mb-2">
             Email *
           </label>
           <input
@@ -90,7 +90,7 @@ export default function ContactForm() {
             required
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pine-500 focus:border-transparent transition-shadow"
+            className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pine-500 focus:border-transparent transition-shadow"
             placeholder="you@email.com"
           />
         </div>
@@ -99,7 +99,7 @@ export default function ContactForm() {
       {/* Phone & Timeline */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-2">
+          <label htmlFor="phone" className="block text-sm font-semibold text-slate-900 mb-2">
             Phone
           </label>
           <input
@@ -107,19 +107,19 @@ export default function ContactForm() {
             id="phone"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pine-500 focus:border-transparent transition-shadow"
+            className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pine-500 focus:border-transparent transition-shadow"
             placeholder="(555) 123-4567"
           />
         </div>
         <div>
-          <label htmlFor="timeline" className="block text-sm font-medium text-slate-700 mb-2">
+          <label htmlFor="timeline" className="block text-sm font-semibold text-slate-900 mb-2">
             Relocation Timeline
           </label>
           <select
             id="timeline"
             value={formData.timeline}
             onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-            className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-pine-500 focus:border-transparent transition-shadow"
+            className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-pine-500 focus:border-transparent transition-shadow"
           >
             <option value="">Select timeline</option>
             <option value="0-3">Within 3 months</option>
@@ -133,14 +133,14 @@ export default function ContactForm() {
 
       {/* Interests */}
       <div>
-        <label htmlFor="interests" className="block text-sm font-medium text-slate-700 mb-2">
+        <label htmlFor="interests" className="block text-sm font-semibold text-slate-900 mb-2">
           What activities are most important to you?
         </label>
         <select
           id="interests"
           value={formData.interests}
           onChange={(e) => setFormData({ ...formData, interests: e.target.value })}
-          className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-pine-500 focus:border-transparent transition-shadow"
+          className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-pine-500 focus:border-transparent transition-shadow"
         >
           <option value="">Select primary interest</option>
           <option value="mountain-biking">Mountain Biking & Trail Riding</option>
@@ -154,7 +154,7 @@ export default function ContactForm() {
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
+        <label htmlFor="message" className="block text-sm font-semibold text-slate-900 mb-2">
           Tell us about your dream lifestyle *
         </label>
         <textarea
@@ -163,7 +163,7 @@ export default function ContactForm() {
           rows={5}
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pine-500 focus:border-transparent transition-shadow resize-none"
+          className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pine-500 focus:border-transparent transition-shadow resize-none"
           placeholder="What does your ideal day look like? What are you looking for in a community?"
         />
       </div>

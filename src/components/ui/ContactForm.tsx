@@ -25,10 +25,18 @@ const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "";
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorDetail, setErrorDetail] = useState("");
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
+    setErrorDetail("");
+
+    if (!WEB3FORMS_KEY || WEB3FORMS_KEY === "your_access_key_here") {
+      setStatus("error");
+      setErrorDetail("Form API key is not configured. Please contact the site owner.");
+      return;
+    }
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -49,12 +57,13 @@ export default function ContactForm() {
       });
 
       const data = await response.json();
-      if (!data.success) throw new Error("Submission failed");
+      if (!data.success) throw new Error(data.message || "Submission failed");
 
       setStatus("success");
       setFormData(initialFormData);
-    } catch {
+    } catch (err) {
       setStatus("error");
+      setErrorDetail(err instanceof Error ? err.message : "Unknown error");
     }
   }
 
@@ -186,7 +195,7 @@ export default function ContactForm() {
       {/* Error */}
       {status === "error" && (
         <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-700">
-          Something went wrong. Please try again or email us directly at{" "}
+          Something went wrong{errorDetail ? ` (${errorDetail})` : ""}. Please try again or email us directly at{" "}
           <a href="mailto:dreamlifeinidaho@gmail.com" className="font-semibold underline">
             dreamlifeinidaho@gmail.com
           </a>.

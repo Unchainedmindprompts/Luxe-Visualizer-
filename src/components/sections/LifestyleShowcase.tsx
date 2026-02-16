@@ -5,7 +5,7 @@ const activities = [
     title: "Mountain Biking",
     description: "World-class singletrack across Canfield Mountain, Beacon Hill, and endless Forest Service trails.",
     image: "/images/mountain-biking.jpg",
-    imageAlt: "Mountain biker riding through pine forests on a dirt trail in Northern Idaho",
+    imageAlt: "Mountain biker jumping off a dirt ramp on a forest trail surrounded by tall pines and ferns",
   },
   {
     title: "Lake Life",

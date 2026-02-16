@@ -18,7 +18,7 @@ export default function BlogPage() {
       <section className="relative h-[40vh] min-h-[320px] flex items-end overflow-hidden">
         <Image
           src="/images/lakefront-dock.jpg"
-          alt="Boathouse and dock on a still Northern Idaho lake at golden hour"
+          alt="Long wooden dock stretching across a calm Northern Idaho lake with forested hills"
           fill
           priority
           quality={85}

@@ -11,7 +11,7 @@ const activities = [
     title: "Lake Life",
     description: "Coeur d'Alene Lake, Hayden Lake, and Priest Lake — crystal-clear waters surrounded by mountains.",
     image: "/images/lakefront-dock.jpg",
-    imageAlt: "Boathouse and dock on a still Northern Idaho lake at golden hour",
+    imageAlt: "Long wooden dock stretching across a calm Northern Idaho lake with forested hills",
   },
   {
     title: "Skiing & Snowboarding",
@@ -23,7 +23,7 @@ const activities = [
     title: "Community & Culture",
     description: "Farmers markets, craft breweries, live music, and a tight-knit community that feels like home.",
     image: "/images/local-brewery.jpg",
-    imageAlt: "Craft beer at a local Northern Idaho brewery taproom",
+    imageAlt: "Playland Pier mural in downtown Coeur d'Alene showcasing local history and culture",
   },
 ];
 

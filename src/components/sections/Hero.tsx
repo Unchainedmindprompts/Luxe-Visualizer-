@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/bluff-panorama.jpg"
-          alt="Panoramic view from a rocky bluff overlooking a calm Northern Idaho lake with forested hills"
+          alt="Marina and boat docks along a rocky pine-covered bluff on a Northern Idaho lake"
           fill
           priority
           quality={85}

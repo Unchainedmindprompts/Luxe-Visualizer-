@@ -7,8 +7,8 @@ export default function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero-lake-mountains.jpg"
-          alt="Aerial view of Coeur d'Alene Lake surrounded by evergreen mountains in Northern Idaho"
+          src="/images/bluff-panorama.jpg"
+          alt="Panoramic view from a rocky bluff overlooking a calm Northern Idaho lake with forested hills"
           fill
           priority
           quality={85}

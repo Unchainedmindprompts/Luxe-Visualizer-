@@ -17,8 +17,8 @@ export default function BlogPage() {
       {/* Hero — dual-layer overlay matches homepage */}
       <section className="relative h-[40vh] min-h-[320px] flex items-end overflow-hidden">
         <Image
-          src="/images/lake-life.jpg"
-          alt="Northern Idaho lake and mountain scenery"
+          src="/images/lakefront-dock.jpg"
+          alt="Boathouse and dock on a still Northern Idaho lake at golden hour"
           fill
           priority
           quality={85}

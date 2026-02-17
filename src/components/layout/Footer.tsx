@@ -102,12 +102,15 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-            <div className="mt-6">
+            <div className="mt-6 space-y-1">
               <p className="text-sm text-slate-400">
                 Shirin Abplanalp — Founder
               </p>
               <p className="text-sm text-slate-400">
-                Coeur d&apos;Alene &amp; Post Falls, Idaho
+                510 S Clearwater Loop, Suite 100
+              </p>
+              <p className="text-sm text-slate-400">
+                Post Falls, ID 83854
               </p>
             </div>
           </div>

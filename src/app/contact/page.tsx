@@ -73,6 +73,16 @@ export default function ContactPage() {
                     </svg>
                     dreamlifeinidaho@gmail.com
                   </a>
+                  <div className="inline-flex items-center gap-2 text-pine-700">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                    </svg>
+                    <span className="font-medium">
+                      510 S Clearwater Loop, Suite 100<br />
+                      Post Falls, ID 83854
+                    </span>
+                  </div>
                 </div>
               </div>
 

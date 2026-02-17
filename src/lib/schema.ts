@@ -21,14 +21,16 @@ export function generateLocalBusinessSchema() {
     },
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Coeur d'Alene",
+      streetAddress: "510 S Clearwater Loop, Suite 100",
+      addressLocality: "Post Falls",
       addressRegion: "ID",
+      postalCode: "83854",
       addressCountry: "US",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 47.6777,
-      longitude: -116.7805,
+      latitude: 47.7180,
+      longitude: -116.9516,
     },
     areaServed: [
       {
@@ -92,9 +94,10 @@ export function generateRealEstateAgentSchema() {
     },
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Coeur d'Alene",
+      streetAddress: "510 S Clearwater Loop, Suite 100",
+      addressLocality: "Post Falls",
       addressRegion: "ID",
-      postalCode: "83814",
+      postalCode: "83854",
       addressCountry: "US",
     },
     areaServed: {

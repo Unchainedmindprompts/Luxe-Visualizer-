@@ -20,7 +20,8 @@ const initialFormData: FormData = {
   message: "",
 };
 
-const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "";
+const WEB3FORMS_KEY =
+  process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "cb4d8c42-0c5d-4ca0-8b17-0a1dc8706a0a";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>(initialFormData);

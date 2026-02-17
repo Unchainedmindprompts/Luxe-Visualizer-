@@ -90,6 +90,68 @@ const articleSchemaData: Record<string, ArticleSchemaData> = {
     ],
     breadcrumbTitle: "The Best Time to Move to Coeur d'Alene",
   },
+
+  "why-your-dog-will-love-class-b-van-life": {
+    keywords: [
+      "best RV for dogs",
+      "Class B van life with dogs",
+      "dog-friendly camper van",
+      "Class B motorhome pet friendly",
+      "traveling with dogs in RV",
+      "Sprinter van dog owner",
+      "dog-friendly trails Coeur d'Alene",
+      "dog-friendly trails Spokane",
+      "van life pets Inland Northwest",
+      "best camper van for families with dogs",
+      "Class B van everyday use",
+      "Sportsmobile dog travel",
+      "RV climate control pets",
+    ],
+    about: [
+      { "@type": "Thing", name: "Class B Motorhome", description: "A camper van built on a standard commercial van chassis, designed for everyday driving and overnight travel" },
+      { "@type": "Thing", name: "Van Life", description: "A lifestyle of living, traveling, or adventuring in a converted or purpose-built camper van" },
+      { "@type": "Thing", name: "Dog-Friendly Travel", description: "Traveling with pets using RV and camper van accommodations" },
+      { "@type": "Place", name: "Coeur d'Alene", address: { "@type": "PostalAddress", addressLocality: "Coeur d'Alene", addressRegion: "Idaho", addressCountry: "US" } },
+      { "@type": "Place", name: "Inland Northwest" },
+      { "@type": "Place", name: "Spokane", address: { "@type": "PostalAddress", addressLocality: "Spokane", addressRegion: "Washington", addressCountry: "US" } },
+      { "@type": "Place", name: "Tubbs Hill", description: "Two-mile lakeside hiking loop in downtown Coeur d'Alene, Idaho with dog-friendly beaches" },
+      { "@type": "Place", name: "Centennial Trail", description: "63-mile paved trail stretching from Spokane into Idaho along the Spokane River" },
+      { "@type": "Place", name: "Q'emiln Park", description: "Dog-friendly park near Post Falls, Idaho with trails, swimming, and rock climbing" },
+      { "@type": "Place", name: "Mineral Ridge", description: "Moderate switchback trail on Lake Coeur d'Alene with bald eagle viewing" },
+      { "@type": "Place", name: "Iller Creek and Rocks of Sharon", description: "360-degree viewpoint trails through Spokane's South Hill" },
+    ],
+    mentions: [
+      { "@type": "Product", name: "Mercedes Sprinter 170 EXT", description: "Extended-length Mercedes-Benz Sprinter van chassis used for Class B motorhome conversions" },
+      { "@type": "Organization", name: "Sportsmobile", description: "Custom adventure van builder specializing in 4x4 Sprinter and Ford conversions" },
+      { "@type": "LocalBusiness", name: "Bretz RV & Marine", description: "RV and marine dealership in Liberty Lake, Washington" },
+      { "@type": "Product", name: "Truma Combi Heater", description: "Diesel-fired independent heating system for RVs and camper vans" },
+      { "@type": "Product", name: "Espar Heater", description: "Diesel-fired independent heating system for RVs and camper vans" },
+      { "@type": "Organization", name: "Go RVing", description: "RV industry association providing RV travel statistics and resources" },
+    ],
+    faqs: [
+      {
+        question: "What is the best RV for traveling with dogs?",
+        answer: "A Class B camper van is ideal for dog owners because of its everyday usability, built-in climate control, and compact size that fits in any parking lot. Unlike larger RVs that sit in storage, a Class B becomes your daily driver — meaning your dog comes along for routine errands, day trips, and spontaneous adventures, not just planned vacations.",
+      },
+      {
+        question: "Can I leave my dog in a camper van while I'm away?",
+        answer: "Yes, with the right setup. Modern Class B vans feature independent heating systems (like Truma or Espar), roof ventilation fans, and shore power air conditioning that maintain comfortable temperatures regardless of outside weather. Many owners also use pet temperature monitors that send alerts to your phone if conditions change.",
+      },
+      {
+        question: "Are Class B vans practical for everyday use?",
+        answer: "Absolutely. Class B vans are built on standard commercial van chassis (Mercedes Sprinter, Ford Transit, Ram ProMaster) and drive like any full-size van. Some fit in normal parking spaces, and use regular gas stations. Most Class B owners report using their van daily, not just for camping trips.",
+      },
+      {
+        question: "What dog-friendly trails are near Spokane and Coeur d'Alene?",
+        answer: "The Inland Northwest offers exceptional dog-friendly hiking, including Tubbs Hill on Lake Coeur d'Alene, the 63-mile Centennial Trail along the Spokane River, Q'emiln Park near Post Falls, Mineral Ridge overlooking Lake Coeur d'Alene, and Iller Creek on Spokane's South Hill. All allow leashed dogs and are within an hour of the metro area.",
+      },
+      {
+        question: "How much do Class B camper vans cost?",
+        answer: "New Class B camper vans typically range from $120,000 to $250,000+ depending on the chassis, builder, and options. Quality pre-owned models can be found starting around $60,000–$90,000. While the upfront cost is significant, many owners find the quality-of-life return — especially for active families with dogs — makes it one of their best investments.",
+      },
+    ],
+    breadcrumbTitle: "Why Your Dog Will Love Class B Van Life",
+  },
 };
 
 export function getArticleSchemaData(slug: string): ArticleSchemaData | null {

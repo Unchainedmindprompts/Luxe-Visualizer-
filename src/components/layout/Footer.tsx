@@ -1,131 +1,83 @@
 import Link from "next/link";
+import { Linkedin, Twitter, Youtube } from "lucide-react";
+import { Container } from "@/components/ui/Container";
 
-const footerLinks = {
-  explore: [
-    { href: "/articles/the-60-minute-rule", label: "The 60-Minute Rule" },
-    { href: "/articles/four-seasons", label: "Four Seasons" },
-    { href: "/articles/geographic-jackpot", label: "Geographic Jackpot" },
-  ],
-  connect: [
-    { href: "/contact", label: "Contact Us" },
-  ],
-};
+const SOCIAL_LINKS = [
+  { label: "LinkedIn", href: "#", icon: Linkedin },
+  { label: "X / Twitter", href: "#", icon: Twitter },
+  { label: "YouTube", href: "#", icon: Youtube },
+];
 
-export default function Footer() {
+const FOOTER_LINKS = [
+  { label: "Privacy Policy", href: "#" },
+  { label: "Terms of Service", href: "#" },
+];
+
+export function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="bg-slate-900 text-slate-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Brand */}
-          <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-pine-600 rounded-lg flex items-center justify-center">
-                <svg
-                  className="w-5 h-5 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3 21l9-18 9 18H3z"
-                  />
-                </svg>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-display font-bold text-lg text-white leading-none">
-                  Basecamp
-                </span>
-                <span className="text-[10px] font-semibold uppercase tracking-widest text-pine-400 leading-none">
-                  INW
-                </span>
-              </div>
+    <footer
+      className="border-t"
+      style={{
+        backgroundColor: "var(--color-bg-deep)",
+        borderColor:
+          "color-mix(in srgb, var(--color-surface-muted) 60%, transparent)",
+      }}
+    >
+      <Container>
+        <div className="py-12 flex flex-col md:flex-row items-center justify-between gap-8">
+          {/* Brand + copyright */}
+          <div className="flex flex-col items-center md:items-start gap-2">
+            <div className="flex items-center gap-2">
+              <span
+                className="block w-1.5 h-1.5 rounded-full"
+                style={{ backgroundColor: "var(--color-accent)" }}
+                aria-hidden="true"
+              />
+              <span
+                className="text-xs font-medium tracking-[0.1em] uppercase"
+                style={{ color: "var(--color-text-primary)" }}
+              >
+                Zero Click Strategies
+              </span>
             </div>
-            <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
-              Your Relocation Scout for Northern Idaho. We help active
-              families and outdoor enthusiasts find their perfect basecamp in
-              the Coeur d&apos;Alene and Post Falls region.
+            <p className="text-xs" style={{ color: "var(--color-text-muted)" }}>
+              &copy; {year} Zero Click Strategies. All rights reserved.
             </p>
           </div>
 
-          {/* Explore Links */}
-          <div>
-            <h3 className="font-display font-semibold text-white mb-4 text-sm uppercase tracking-wider">
-              Explore
-            </h3>
-            <ul className="space-y-3">
-              {footerLinks.explore.map((link) => (
-                <li key={link.href}>
+          {/* Footer links — CSS hover only, no JS handlers */}
+          <nav aria-label="Footer navigation">
+            <ul className="flex items-center gap-6" role="list">
+              {FOOTER_LINKS.map(({ label, href }) => (
+                <li key={label}>
                   <Link
-                    href={link.href}
-                    className="text-sm text-slate-400 hover:text-pine-400 transition-colors"
+                    href={href}
+                    className="footer-link text-xs transition-colors duration-300"
                   >
-                    {link.label}
+                    {label}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
-          {/* Connect */}
-          <div>
-            <h3 className="font-display font-semibold text-white mb-4 text-sm uppercase tracking-wider">
-              Connect
-            </h3>
-            <ul className="space-y-3">
-              {footerLinks.connect.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-slate-400 hover:text-pine-400 transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <a
-                  href="tel:+12086607468"
-                  className="text-sm text-slate-400 hover:text-pine-400 transition-colors"
-                >
-                  (208) 660-7468
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:dreamlifeinidaho@gmail.com"
-                  className="text-sm text-slate-400 hover:text-pine-400 transition-colors"
-                >
-                  dreamlifeinidaho@gmail.com
-                </a>
-              </li>
-            </ul>
-            <div className="mt-6 space-y-1">
-              <p className="text-sm text-slate-400">
-                Shirin Abplanalp — Founder
-              </p>
-              <p className="text-sm text-slate-400">
-                510 S Clearwater Loop, Suite 100
-              </p>
-              <p className="text-sm text-slate-400">
-                Post Falls, ID 83854
-              </p>
-            </div>
+          {/* Social icons */}
+          <div className="flex items-center gap-5" aria-label="Social media">
+            {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
+              <Link
+                key={label}
+                href={href}
+                aria-label={label}
+                className="social-link transition-colors duration-300"
+              >
+                <Icon size={16} aria-hidden="true" />
+              </Link>
+            ))}
           </div>
         </div>
-
-        {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-slate-500">
-            &copy; {new Date().getFullYear()} Basecamp INW. All rights reserved.
-          </p>
-          <p className="text-xs text-slate-500">
-            Northern Idaho&apos;s Premier Relocation Scout
-          </p>
-        </div>
-      </div>
+      </Container>
     </footer>
   );
 }

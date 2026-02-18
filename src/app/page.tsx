@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { SolutionsGrid } from "@/components/sections/SolutionsGrid";
 import { IntelligenceBriefing } from "@/components/sections/IntelligenceBriefing";
+import { AuditSection } from "@/components/sections/AuditSection";
 
 export default function HomePage() {
   return (
@@ -12,7 +13,7 @@ export default function HomePage() {
         <Hero />
         <SolutionsGrid />
         <IntelligenceBriefing />
-        {/* Audit form — Phase 3 */}
+        <AuditSection />
       </main>
       <Footer />
     </>

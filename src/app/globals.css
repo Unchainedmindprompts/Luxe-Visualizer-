@@ -162,4 +162,35 @@ body {
   .intel-read-more:hover {
     opacity: 1;
   }
+
+  /* ─── Audit form inputs ──────────────────────────────────────────────── */
+  .audit-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--color-bg-deep);
+    border: 1px solid var(--color-surface-muted);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-size: 0.875rem;
+    font-family: inherit;
+    line-height: 1.5;
+    outline: none;
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+  .audit-input::placeholder {
+    color: var(--color-text-muted);
+  }
+  .audit-input:hover {
+    border-color: var(--color-text-muted);
+  }
+  .audit-input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 15%, transparent);
+  }
+  /* textarea-specific */
+  .audit-input.resize-none {
+    resize: none;
+  }
 }

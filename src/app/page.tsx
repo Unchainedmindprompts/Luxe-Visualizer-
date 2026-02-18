@@ -1,6 +1,8 @@
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
+import { SolutionsGrid } from "@/components/sections/SolutionsGrid";
+import { IntelligenceBriefing } from "@/components/sections/IntelligenceBriefing";
 
 export default function HomePage() {
   return (
@@ -8,7 +10,9 @@ export default function HomePage() {
       <Navigation />
       <main>
         <Hero />
-        {/* Solutions, Intelligence, and Audit sections — Phase 2 */}
+        <SolutionsGrid />
+        <IntelligenceBriefing />
+        {/* Audit form — Phase 3 */}
       </main>
       <Footer />
     </>

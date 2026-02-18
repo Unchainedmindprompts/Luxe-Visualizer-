@@ -126,4 +126,40 @@ body {
   .social-link:hover {
     color: var(--color-text-secondary);
   }
+
+  /* ─── Solution card hover ─────────────────────────────────────────────── */
+  /* Shadow and border transition alongside Framer Motion's y-lift */
+  .solution-card {
+    transition:
+      box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .solution-card:hover {
+    box-shadow: 0 20px 60px -16px rgba(59, 130, 246, 0.18);
+    border-color: color-mix(in srgb, var(--color-accent) 35%, var(--color-surface-muted));
+  }
+  /* Icon background brightens on card hover */
+  .solution-card:hover .solution-icon {
+    background-color: color-mix(in srgb, var(--color-accent) 20%, transparent);
+  }
+
+  /* ─── Intelligence article card hover ────────────────────────────────── */
+  .intel-card {
+    transition:
+      box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .intel-card:hover {
+    box-shadow: 0 12px 40px -12px rgba(59, 130, 246, 0.12);
+    border-color: color-mix(in srgb, var(--color-accent) 25%, var(--color-surface-muted));
+  }
+
+  /* Read More arrow nudge — driven by parent .group in Tailwind, but scoped here for Server compat */
+  .intel-read-more {
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+  }
+  .intel-read-more:hover {
+    opacity: 1;
+  }
 }

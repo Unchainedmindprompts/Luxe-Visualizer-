@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const footerLinks = {
@@ -15,7 +16,7 @@ export default function Footer() {
   return (
     <footer className="bg-slate-900 text-slate-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
@@ -67,6 +68,18 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Shirin Photo */}
+          <div className="flex items-start justify-center md:justify-start">
+            <div className="relative w-36 h-44 rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src="/images/shirin-abplanalp.jpg"
+                alt="Shirin Abplanalp — Founder of Basecamp INW"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
 
           {/* Connect */}

@@ -21,23 +21,38 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
+const SITE_URL = "https://www.inwbasecamp.com";
+
+function trimMetaDescription(text: string, maxLength = 160): string {
+  if (text.length <= maxLength) return text;
+  const trimmed = text.slice(0, maxLength);
+  const lastSpace = trimmed.lastIndexOf(" ");
+  return (lastSpace > 120 ? trimmed.slice(0, lastSpace) : trimmed) + "…";
+}
+
 export async function generateMetadata({
   params,
 }: ArticlePageProps): Promise<Metadata> {
   try {
     const { frontmatter } = getArticleBySlug(params.slug);
+    const canonicalUrl = `${SITE_URL}/articles/${params.slug}`;
+    const metaDescription = trimMetaDescription(frontmatter.description);
     return {
       title: frontmatter.title,
-      description: frontmatter.description,
+      description: metaDescription,
+      alternates: {
+        canonical: canonicalUrl,
+      },
       openGraph: {
         title: frontmatter.title,
-        description: frontmatter.description,
+        description: metaDescription,
         type: "article",
+        url: canonicalUrl,
         publishedTime: frontmatter.date,
         modifiedTime: frontmatter.updated || frontmatter.date,
         images: [
           {
-            url: frontmatter.image,
+            url: `${SITE_URL}${frontmatter.image}`,
             width: 1200,
             height: 630,
             alt: frontmatter.imageAlt,

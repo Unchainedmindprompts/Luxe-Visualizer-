@@ -6,7 +6,25 @@ import { getAllArticles } from "@/lib/articles";
 export const metadata: Metadata = {
   title: "Blog | Northern Idaho Lifestyle & Relocation Insights",
   description:
-    "Explore in-depth guides on relocating to Northern Idaho — from outdoor recreation and four-season living to the geographic advantages of Coeur d'Alene and Post Falls.",
+    "In-depth guides on relocating to Northern Idaho — outdoor recreation, four-season living, and the lifestyle advantages of Coeur d'Alene and Post Falls.",
+  alternates: {
+    canonical: "https://www.inwbasecamp.com/blog",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://www.inwbasecamp.com/blog",
+    title: "Blog | Northern Idaho Lifestyle & Relocation Insights",
+    description:
+      "In-depth guides on relocating to Northern Idaho — outdoor recreation, four-season living, and the lifestyle advantages of Coeur d'Alene and Post Falls.",
+    images: [
+      {
+        url: "https://www.inwbasecamp.com/images/og-basecamp.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Basecamp INW Blog - Northern Idaho Relocation Insights",
+      },
+    ],
+  },
 };
 
 export default function BlogPage() {

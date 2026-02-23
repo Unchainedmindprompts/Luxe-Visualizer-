@@ -6,6 +6,24 @@ export const metadata: Metadata = {
   title: "Contact | Start Your Northern Idaho Relocation",
   description:
     "Connect with your Relocation Scout. Tell us about your dream lifestyle and we'll help you find the perfect basecamp in Coeur d'Alene or Post Falls, Idaho.",
+  alternates: {
+    canonical: "https://www.inwbasecamp.com/contact",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://www.inwbasecamp.com/contact",
+    title: "Contact | Start Your Northern Idaho Relocation",
+    description:
+      "Connect with your Relocation Scout. Tell us about your dream lifestyle and we'll help you find the perfect basecamp in Coeur d'Alene or Post Falls, Idaho.",
+    images: [
+      {
+        url: "https://www.inwbasecamp.com/images/og-basecamp.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Contact Basecamp INW - Northern Idaho Relocation Scout",
+      },
+    ],
+  },
 };
 
 export default function ContactPage() {

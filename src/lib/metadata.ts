@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 const SITE_URL = "https://www.inwbasecamp.com";
 const SITE_NAME = "Basecamp INW";
 const SITE_DESCRIPTION =
-  "Your Relocation Scout for Northern Idaho. Discover why Coeur d'Alene and Post Falls are the ultimate basecamp for mountain biking, lake life, skiing, and year-round outdoor living.";
+  "Your Northern Idaho Relocation Scout. Coeur d'Alene and Post Falls are the ultimate basecamp for mountain biking, lake life, skiing, and outdoor living.";
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -27,6 +27,9 @@ export const siteMetadata: Metadata = {
   ],
   authors: [{ name: SITE_NAME }],
   creator: SITE_NAME,
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
     type: "website",
     locale: "en_US",

@@ -11,6 +11,17 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ["@mdx-js/react"],
   },
+  async redirects() {
+    return [
+      // Redirect non-www to www (permanent 301)
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "inwbasecamp.com" }],
+        destination: "https://www.inwbasecamp.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 const withMDX = createMDX({

@@ -467,9 +467,18 @@ export default function ArizonaContent() {
                 <h2 className="font-playfair text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-2">
                   Shirin Abplanalp
                 </h2>
-                <p className="text-xs text-slate-400 uppercase tracking-widest mb-8 font-dm-sans">
+                <p className="text-xs text-slate-400 uppercase tracking-widest mb-5 font-dm-sans">
                   Northern Idaho Relocation Specialist &middot; eXp Realty
                 </p>
+                <div className="mb-8">
+                  <Image
+                    src="/images/exp-realty-logo.jpg"
+                    alt="eXp Realty"
+                    width={120}
+                    height={40}
+                    className="object-contain"
+                  />
+                </div>
               </div>
 
               <div

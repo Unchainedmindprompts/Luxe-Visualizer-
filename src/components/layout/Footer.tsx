@@ -125,6 +125,15 @@ export default function Footer() {
               <p className="text-sm text-slate-400">
                 Post Falls, ID 83854
               </p>
+              <div className="pt-3">
+                <Image
+                  src="/images/exp-realty-logo.jpg"
+                  alt="eXp Realty"
+                  width={90}
+                  height={30}
+                  className="object-contain brightness-0 invert opacity-70"
+                />
+              </div>
             </div>
           </div>
         </div>

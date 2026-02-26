@@ -131,7 +131,7 @@ export default function Footer() {
                   alt="eXp Realty"
                   width={90}
                   height={30}
-                  className="object-contain brightness-0 invert opacity-70"
+                  className="object-contain rounded-sm"
                 />
               </div>
             </div>

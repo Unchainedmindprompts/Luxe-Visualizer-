@@ -20,6 +20,12 @@ const nextConfig = {
         destination: "https://www.inwbasecamp.com/:path*",
         permanent: true,
       },
+      // WordPress legacy URL redirect
+      {
+        source: "/2025/02/20/inland-northwest-geographic-jackpot/",
+        destination: "/articles/geographic-jackpot",
+        permanent: true,
+      },
     ];
   },
 };

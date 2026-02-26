@@ -59,6 +59,8 @@ const config: Config = {
       fontFamily: {
         sans: ["'Inter'", "system-ui", "sans-serif"],
         display: ["'Outfit'", "system-ui", "sans-serif"],
+        playfair: ["'Playfair Display'", "Georgia", "serif"],
+        "dm-sans": ["'DM Sans'", "system-ui", "sans-serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

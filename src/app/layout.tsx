@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navigation from "@/components/layout/Navigation";
-import Footer from "@/components/layout/Footer";
+import ConditionalLayout from "@/components/layout/ConditionalLayout";
 import { siteMetadata } from "@/lib/metadata";
 import {
   generateLocalBusinessSchema,
@@ -27,7 +26,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"
           rel="stylesheet"
         />
         <script
@@ -70,9 +69,7 @@ fbq('track', 'PageView');
         {/* End Meta Pixel Code */}
       </head>
       <body className="font-sans antialiased">
-        <Navigation />
-        <main>{children}</main>
-        <Footer />
+        <ConditionalLayout>{children}</ConditionalLayout>
       </body>
     </html>
   );

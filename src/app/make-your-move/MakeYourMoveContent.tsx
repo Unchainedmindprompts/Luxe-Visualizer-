@@ -425,7 +425,7 @@ export default function MakeYourMoveContent() {
                 </p>
                 <p className="text-lg text-white/75 leading-relaxed mb-6">
                   Outdoor lifestyle. Lower cost of living than the Pacific
-                  Coast. No state income tax on wages. Crystal lakes, mountain
+                  Coast. Crystal lakes, mountain
                   trails, and four genuine seasons.
                 </p>
                 <p className="text-lg text-white/75 leading-relaxed">

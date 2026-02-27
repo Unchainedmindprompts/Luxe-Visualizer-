@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
 
-const LANDING_PAGES = ["/arizona"];
+const LANDING_PAGES = ["/arizona", "/make-your-move"];
 
 export default function ConditionalLayout({
   children,

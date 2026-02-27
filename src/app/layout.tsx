@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import ConditionalLayout from "@/components/layout/ConditionalLayout";
 import { siteMetadata } from "@/lib/metadata";
@@ -39,8 +40,13 @@ export default function RootLayout({
             ]),
           }}
         />
+      </head>
+      <body className="font-sans antialiased">
+        <ConditionalLayout>{children}</ConditionalLayout>
         {/* Meta Pixel Code */}
-        <script
+        <Script
+          id="meta-pixel"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
 !function(f,b,e,v,n,t,s)
@@ -67,9 +73,6 @@ fbq('track', 'PageView');
           />
         </noscript>
         {/* End Meta Pixel Code */}
-      </head>
-      <body className="font-sans antialiased">
-        <ConditionalLayout>{children}</ConditionalLayout>
       </body>
     </html>
   );

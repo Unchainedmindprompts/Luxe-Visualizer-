@@ -10,7 +10,7 @@ const pillars = [
   {
     title: "Lake Life",
     description: "Crystal-clear Coeur d'Alene Lake, Hayden Lake, and Priest Lake — surrounded by mountains.",
-    image: "/images/lake-life.jpg",
+    image: "/images/lakefront-dock.jpg",
     imageAlt: "Calm Northern Idaho lake with forested mountain backdrop",
   },
   {
@@ -22,7 +22,7 @@ const pillars = [
   {
     title: "Community & Culture",
     description: "Farmers markets, craft breweries, live music, and a tight-knit community that feels like home.",
-    image: "/images/community.jpg",
+    image: "/images/local-brewery.jpg",
     imageAlt: "Community life in downtown Coeur d'Alene, Northern Idaho",
   },
 ];

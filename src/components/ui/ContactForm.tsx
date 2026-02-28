@@ -6,7 +6,6 @@ interface FormData {
   name: string;
   email: string;
   phone: string;
-  timeline: string;
   interests: string;
   message: string;
 }
@@ -15,13 +14,17 @@ const initialFormData: FormData = {
   name: "",
   email: "",
   phone: "",
-  timeline: "",
   interests: "",
   message: "",
 };
 
 const WEB3FORMS_KEY =
   process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "8e98b6da-d70f-40e3-b422-37f8c617527d";
+
+const inputClass =
+  "w-full px-4 py-3 bg-cream border border-cream-200 text-[#2C2C2C] placeholder-[#2C2C2C]/30 focus:outline-none focus:border-gold transition-colors text-sm";
+
+const labelClass = "block text-xs font-semibold uppercase tracking-[0.1em] text-[#2C2C2C]/60 mb-2";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>(initialFormData);
@@ -46,13 +49,12 @@ export default function ContactForm() {
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
           subject: `New Relocation Inquiry from ${formData.name}`,
-          from_name: "Basecamp INW Website",
+          from_name: "INW Basecamp Website",
           replyto: formData.email,
           Name: formData.name,
           Email: formData.email,
           Phone: formData.phone || "Not provided",
-          "Relocation Timeline": formData.timeline || "Not specified",
-          "Primary Interest": formData.interests || "Not specified",
+          "I am interested in": formData.interests || "Not specified",
           Message: formData.message,
         }),
       });
@@ -70,133 +72,100 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="bg-pine-50 border border-pine-200 rounded-2xl p-8 text-center">
-        <div className="w-16 h-16 bg-pine-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg className="w-8 h-8 text-pine-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      <div className="bg-cream border border-gold/30 p-8 text-center">
+        <div className="w-12 h-12 bg-gold/20 flex items-center justify-center mx-auto mb-4">
+          <svg className="w-6 h-6 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
           </svg>
         </div>
-        <h3 className="font-display text-2xl font-bold text-slate-950 mb-2">
-          Message Sent!
+        <h3 className="font-display text-2xl font-semibold text-forest mb-2">
+          Message Sent
         </h3>
-        <p className="text-slate-700">
-          Thanks for reaching out! Shirin will be in touch within 24 hours to
-          start planning your relocation.
+        <p className="text-sm text-[#2C2C2C]/70">
+          Thanks for reaching out. Shirin will be in touch within 24 hours.
         </p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-5">
       {/* Name & Email */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="name" className="block text-sm font-semibold text-slate-900 mb-2">
-            Full Name *
-          </label>
+          <label htmlFor="name" className={labelClass}>Full Name *</label>
           <input
             type="text"
             id="name"
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pine-500 focus:border-transparent transition-shadow"
+            className={inputClass}
             placeholder="Your name"
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-semibold text-slate-900 mb-2">
-            Email *
-          </label>
+          <label htmlFor="email" className={labelClass}>Email *</label>
           <input
             type="email"
             id="email"
             required
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pine-500 focus:border-transparent transition-shadow"
+            className={inputClass}
             placeholder="you@email.com"
           />
         </div>
       </div>
 
-      {/* Phone & Timeline */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {/* Phone & Interests */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="phone" className="block text-sm font-semibold text-slate-900 mb-2">
-            Phone
-          </label>
+          <label htmlFor="phone" className={labelClass}>Phone</label>
           <input
             type="tel"
             id="phone"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pine-500 focus:border-transparent transition-shadow"
+            className={inputClass}
             placeholder="(555) 123-4567"
           />
         </div>
         <div>
-          <label htmlFor="timeline" className="block text-sm font-semibold text-slate-900 mb-2">
-            Relocation Timeline
-          </label>
+          <label htmlFor="interests" className={labelClass}>I am interested in</label>
           <select
-            id="timeline"
-            value={formData.timeline}
-            onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-            className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-pine-500 focus:border-transparent transition-shadow"
+            id="interests"
+            value={formData.interests}
+            onChange={(e) => setFormData({ ...formData, interests: e.target.value })}
+            className={inputClass}
           >
-            <option value="">Select timeline</option>
-            <option value="Within 3 months">Within 3 months</option>
-            <option value="3 to 6 months">3 to 6 months</option>
-            <option value="6 to 12 months">6 to 12 months</option>
-            <option value="12+ months">12+ months</option>
-            <option value="Just exploring">Just exploring</option>
+            <option value="">Select one</option>
+            <option value="Buying">Buying</option>
+            <option value="Selling">Selling</option>
+            <option value="Relocating">Relocating</option>
+            <option value="Just Exploring">Just Exploring</option>
           </select>
         </div>
       </div>
 
-      {/* Interests */}
-      <div>
-        <label htmlFor="interests" className="block text-sm font-semibold text-slate-900 mb-2">
-          What activities are most important to you?
-        </label>
-        <select
-          id="interests"
-          value={formData.interests}
-          onChange={(e) => setFormData({ ...formData, interests: e.target.value })}
-          className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-pine-500 focus:border-transparent transition-shadow"
-        >
-          <option value="">Select primary interest</option>
-          <option value="Mountain Biking & Trail Riding">Mountain Biking & Trail Riding</option>
-          <option value="Lake & Water Sports">Lake & Water Sports</option>
-          <option value="Skiing & Snowboarding">Skiing & Snowboarding</option>
-          <option value="Hiking & Backpacking">Hiking & Backpacking</option>
-          <option value="Family-Friendly Community">Family-Friendly Community</option>
-          <option value="All of the Above">All of the Above</option>
-        </select>
-      </div>
-
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-sm font-semibold text-slate-900 mb-2">
-          Tell us about your dream lifestyle *
-        </label>
+        <label htmlFor="message" className={labelClass}>Message *</label>
         <textarea
           id="message"
           required
           rows={5}
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pine-500 focus:border-transparent transition-shadow resize-none"
-          placeholder="What does your ideal day look like? What are you looking for in a community?"
+          className={inputClass}
+          placeholder="Tell Shirin about your situation, timeline, and what you're looking for..."
         />
       </div>
 
       {/* Error */}
       {status === "error" && (
-        <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-700">
-          Something went wrong{errorDetail ? ` (${errorDetail})` : ""}. Please try again or email us directly at{" "}
+        <div className="border border-red-200 bg-red-50 p-4 text-sm text-red-700">
+          Something went wrong{errorDetail ? ` (${errorDetail})` : ""}. Please try again or email{" "}
           <a href="mailto:dreamlifeinidaho@gmail.com" className="font-semibold underline">
             dreamlifeinidaho@gmail.com
           </a>.
@@ -207,11 +176,11 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="w-full sm:w-auto px-8 py-4 bg-pine-600 text-white font-semibold text-lg rounded-xl hover:bg-pine-700 transition-all shadow-lg shadow-pine-600/25 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full px-8 py-4 bg-gold text-forest font-semibold text-sm tracking-wide hover:bg-gold-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {status === "submitting" ? (
           <span className="flex items-center justify-center gap-2">
-            <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+            <svg className="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
             </svg>

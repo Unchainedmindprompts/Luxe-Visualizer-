@@ -12,7 +12,54 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        // Basecamp brand palette - premium outdoorsy aesthetic
+        // Luxury real estate palette
+        cream: {
+          DEFAULT: "#F8F5F0",
+          50: "#FDFCFB",
+          100: "#F8F5F0",
+          200: "#EDE7DC",
+          300: "#DDD3C3",
+        },
+        forest: {
+          DEFAULT: "#1C2B1E",
+          50: "#f3f5f3",
+          100: "#d6ddd7",
+          200: "#adb9af",
+          300: "#7d9180",
+          400: "#4d6450",
+          500: "#2e4a31",
+          600: "#1C2B1E",
+          700: "#172418",
+          800: "#111c12",
+          900: "#0c140d",
+        },
+        gold: {
+          DEFAULT: "#C9A84C",
+          50: "#fdf8ec",
+          100: "#f7eccc",
+          200: "#efd898",
+          300: "#e3bf5c",
+          400: "#C9A84C",
+          500: "#b8933a",
+          600: "#9a7a2e",
+          700: "#7c6226",
+          800: "#634e1e",
+          900: "#4d3c17",
+        },
+        sage: {
+          DEFAULT: "#8A9E8C",
+          50: "#f4f6f4",
+          100: "#e3e8e3",
+          200: "#c6d1c7",
+          300: "#a3b5a4",
+          400: "#8A9E8C",
+          500: "#6e8470",
+          600: "#586a5a",
+          700: "#46544a",
+          800: "#39443c",
+          900: "#2e372f",
+        },
+        // Keep pine for article link colors
         pine: {
           50: "#f0f7f4",
           100: "#d9ede3",
@@ -25,9 +72,6 @@ const config: Config = {
           800: "#1c4536",
           900: "#19392e",
           950: "#0c201a",
-        },
-        slate: {
-          850: "#1a2332",
         },
         ridge: {
           50: "#faf8f5",
@@ -42,25 +86,13 @@ const config: Config = {
           900: "#5c4133",
           950: "#31201a",
         },
-        summit: {
-          50: "#f0f5ff",
-          100: "#e0eaff",
-          200: "#c7d8fe",
-          300: "#a4bdfc",
-          400: "#7f97f8",
-          500: "#6172f1",
-          600: "#4a4de5",
-          700: "#3d3dca",
-          800: "#3435a3",
-          900: "#303381",
-          950: "#1d1e4b",
-        },
       },
       fontFamily: {
-        sans: ["'Inter'", "system-ui", "sans-serif"],
-        display: ["'Outfit'", "system-ui", "sans-serif"],
-        playfair: ["'Playfair Display'", "Georgia", "serif"],
+        sans: ["'DM Sans'", "system-ui", "sans-serif"],
+        display: ["'Cormorant Garamond'", "Georgia", "serif"],
+        cormorant: ["'Cormorant Garamond'", "Georgia", "serif"],
         "dm-sans": ["'DM Sans'", "system-ui", "sans-serif"],
+        playfair: ["'Playfair Display'", "Georgia", "serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -68,8 +100,8 @@ const config: Config = {
           "linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6))",
       },
       animation: {
-        "fade-in": "fadeIn 0.6s ease-out",
-        "slide-up": "slideUp 0.6s ease-out",
+        "fade-in": "fadeIn 0.7s ease-out",
+        "slide-up": "slideUp 0.7s ease-out",
         "slide-in-right": "slideInRight 0.6s ease-out",
       },
       keyframes: {
@@ -78,7 +110,7 @@ const config: Config = {
           "100%": { opacity: "1" },
         },
         slideUp: {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "0%": { opacity: "0", transform: "translateY(24px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         slideInRight: {
@@ -89,13 +121,13 @@ const config: Config = {
       typography: {
         DEFAULT: {
           css: {
-            "--tw-prose-body": "var(--tw-slate-900, #0f172a)",
-            "--tw-prose-headings": "var(--tw-slate-950, #020617)",
+            "--tw-prose-body": "#2C2C2C",
+            "--tw-prose-headings": "#1C2B1E",
             "--tw-prose-links": "#276b50",
-            "--tw-prose-bold": "var(--tw-slate-950, #020617)",
-            "--tw-prose-quotes": "var(--tw-slate-700, #334155)",
-            "--tw-prose-quote-borders": "#378565",
-            color: "#0f172a",
+            "--tw-prose-bold": "#1C2B1E",
+            "--tw-prose-quotes": "#2C2C2C",
+            "--tw-prose-quote-borders": "#C9A84C",
+            color: "#2C2C2C",
             a: {
               color: "#276b50",
               fontWeight: "500",
@@ -107,26 +139,13 @@ const config: Config = {
                 textDecorationColor: "#205642",
               },
             },
-            h1: {
-              color: "#020617",
-              fontWeight: "700",
-            },
-            h2: {
-              color: "#020617",
-              fontWeight: "700",
-              marginTop: "2.5em",
-            },
-            h3: {
-              color: "#020617",
-              fontWeight: "700",
-            },
-            strong: {
-              color: "#020617",
-              fontWeight: "600",
-            },
+            h1: { color: "#1C2B1E", fontWeight: "600" },
+            h2: { color: "#1C2B1E", fontWeight: "600", marginTop: "2.5em" },
+            h3: { color: "#1C2B1E", fontWeight: "600" },
+            strong: { color: "#1C2B1E", fontWeight: "600" },
             blockquote: {
-              borderLeftColor: "#378565",
-              color: "#334155",
+              borderLeftColor: "#C9A84C",
+              color: "#2C2C2C",
             },
           },
         },

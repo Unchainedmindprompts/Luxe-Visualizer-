@@ -25,7 +25,6 @@ const dmSans = DM_Sans({
   style: ["normal", "italic"],
   display: "swap",
   variable: "--font-dm-sans",
-  axes: ["opsz"],
 });
 
 export const metadata: Metadata = siteMetadata;

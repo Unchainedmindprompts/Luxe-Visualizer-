@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -13,6 +14,8 @@ const navLinks = [
 export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHomepage = pathname === "/";
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
@@ -20,11 +23,14 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
+  // Show solid dark nav: always on non-homepage pages, or when scrolled on homepage
+  const showSolid = !isHomepage || scrolled;
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-cream/95 backdrop-blur-md border-b border-cream-200 shadow-sm"
+        showSolid
+          ? "bg-forest shadow-md border-b border-white/10"
           : "bg-transparent"
       }`}
     >
@@ -32,16 +38,12 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo / Brand */}
           <Link href="/" className="flex flex-col leading-none group">
-            <span
-              className={`font-display text-xl font-semibold tracking-wide transition-colors ${
-                scrolled ? "text-forest" : "text-white"
-              }`}
-            >
+            <span className="font-display text-xl font-semibold tracking-wide text-white transition-colors">
               INW Basecamp
             </span>
             <span
               className={`text-[10px] font-medium uppercase tracking-[0.2em] transition-colors ${
-                scrolled ? "text-gold-500" : "text-gold-300"
+                showSolid ? "text-gold-400" : "text-gold-300"
               }`}
             >
               Northern Idaho Real Estate
@@ -54,9 +56,7 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium tracking-wide transition-colors hover:text-gold-400 ${
-                  scrolled ? "text-[#2C2C2C]" : "text-white/90"
-                }`}
+                className="text-sm font-medium tracking-wide text-white/85 hover:text-gold-400 transition-colors"
               >
                 {link.label}
               </Link>
@@ -72,9 +72,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className={`md:hidden p-2 transition-colors ${
-              scrolled ? "text-forest" : "text-white"
-            }`}
+            className="md:hidden p-2 text-white transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle navigation menu"
           >
@@ -97,13 +95,13 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-cream border-t border-cream-200">
+        <div className="md:hidden bg-forest border-t border-white/10">
           <div className="px-4 py-6 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block px-4 py-3 text-base font-medium text-[#2C2C2C] hover:text-forest transition-colors border-b border-cream-200 last:border-0"
+                className="block px-4 py-3 text-base font-medium text-white/85 hover:text-gold-400 transition-colors border-b border-white/10 last:border-0"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}

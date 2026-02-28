@@ -11,9 +11,9 @@ export default function Hero() {
           alt="Marina and boat docks along a rocky pine-covered bluff on a Northern Idaho lake"
           fill
           priority
-          quality={85}
+          quality={75}
           className="object-cover"
-          sizes="100vw"
+          sizes="(max-width: 640px) 640px, (max-width: 1080px) 1080px, (max-width: 1920px) 1920px, 2048px"
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-forest/60 via-forest/40 to-forest/70" />

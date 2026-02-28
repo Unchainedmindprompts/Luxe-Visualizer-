@@ -88,10 +88,10 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["'DM Sans'", "system-ui", "sans-serif"],
-        display: ["'Cormorant Garamond'", "Georgia", "serif"],
-        cormorant: ["'Cormorant Garamond'", "Georgia", "serif"],
-        "dm-sans": ["'DM Sans'", "system-ui", "sans-serif"],
+        sans: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-cormorant)", "Georgia", "serif"],
+        cormorant: ["var(--font-cormorant)", "Georgia", "serif"],
+        "dm-sans": ["var(--font-dm-sans)", "system-ui", "sans-serif"],
         playfair: ["'Playfair Display'", "Georgia", "serif"],
       },
       backgroundImage: {

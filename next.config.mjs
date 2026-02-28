@@ -26,6 +26,12 @@ const nextConfig = {
         destination: "/articles/geographic-jackpot",
         permanent: true,
       },
+      // Redirect /blog to /articles
+      {
+        source: "/blog",
+        destination: "/articles",
+        permanent: true,
+      },
     ];
   },
 };

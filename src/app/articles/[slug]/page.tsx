@@ -65,36 +65,58 @@ export async function generateMetadata({
   }
 }
 
+// MDX components styled to match new design system
 const mdxComponents = {
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h1 className="font-display text-4xl md:text-5xl font-bold tracking-tight text-slate-950 mb-8" {...props} />
+    <h1
+      className="font-display text-4xl md:text-5xl font-semibold text-forest tracking-tight mb-8 leading-tight"
+      {...props}
+    />
   ),
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-950 mt-20 mb-6" {...props} />
+    <h2
+      className="font-display text-3xl md:text-4xl font-semibold text-forest tracking-tight mt-20 mb-6 leading-tight"
+      {...props}
+    />
   ),
   h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h3 className="font-display text-2xl font-bold text-slate-950 mt-12 mb-4" {...props} />
+    <h3
+      className="font-display text-2xl font-semibold text-forest mt-12 mb-4"
+      {...props}
+    />
   ),
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p className="text-lg leading-relaxed text-slate-900 mb-6" {...props} />
+    <p className="text-lg leading-relaxed text-[#2C2C2C] mb-6" {...props} />
   ),
   ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
-    <ul className="list-disc list-outside ml-6 space-y-2 text-lg text-slate-900 mb-6" {...props} />
+    <ul
+      className="list-disc list-outside ml-6 space-y-2 text-lg text-[#2C2C2C] mb-6"
+      {...props}
+    />
   ),
   ol: (props: React.HTMLAttributes<HTMLOListElement>) => (
-    <ol className="list-decimal list-outside ml-6 space-y-2 text-lg text-slate-900 mb-6" {...props} />
+    <ol
+      className="list-decimal list-outside ml-6 space-y-2 text-lg text-[#2C2C2C] mb-6"
+      {...props}
+    />
   ),
   li: (props: React.HTMLAttributes<HTMLLIElement>) => (
     <li className="leading-relaxed" {...props} />
   ),
   blockquote: (props: React.HTMLAttributes<HTMLQuoteElement>) => (
-    <blockquote className="border-l-4 border-pine-500 pl-6 italic text-slate-700 my-10 text-lg" {...props} />
+    <blockquote
+      className="border-l-4 border-gold pl-6 italic text-[#2C2C2C] my-10 text-lg"
+      {...props}
+    />
   ),
   strong: (props: React.HTMLAttributes<HTMLElement>) => (
-    <strong className="font-semibold text-slate-950" {...props} />
+    <strong className="font-semibold text-forest" {...props} />
   ),
   a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-    <a className="text-pine-600 font-medium underline decoration-pine-600/30 underline-offset-2 hover:decoration-pine-600 hover:text-pine-700 transition-colors" {...props} />
+    <a
+      className="text-pine-600 font-medium underline decoration-pine-600/30 underline-offset-2 hover:decoration-pine-600 hover:text-pine-700 transition-colors"
+      {...props}
+    />
   ),
 };
 
@@ -107,7 +129,6 @@ export default function ArticlePage({ params }: ArticlePageProps) {
   }
 
   const { frontmatter, content } = article;
-
   const richData = getArticleSchemaData(params.slug);
 
   const articleSchema = generateArticleSchema({
@@ -122,13 +143,11 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     mentions: richData?.mentions,
   });
 
-  const faqSchema = richData?.faqs
-    ? generateFAQSchema(richData.faqs)
-    : null;
+  const faqSchema = richData?.faqs ? generateFAQSchema(richData.faqs) : null;
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", path: "" },
-    { name: "Blog", path: "/blog" },
+    { name: "Articles", path: "/articles" },
     {
       name: richData?.breadcrumbTitle || frontmatter.title,
       path: `/articles/${params.slug}`,
@@ -152,8 +171,8 @@ export default function ArticlePage({ params }: ArticlePageProps) {
         />
       )}
 
-      {/* Hero — dual-layer overlay matches homepage for consistent nav/text protection */}
-      <section className="relative h-[50vh] min-h-[400px] flex items-end overflow-hidden">
+      {/* Article Hero */}
+      <section className="relative h-[60vh] min-h-[440px] flex items-end overflow-hidden">
         <Image
           src={frontmatter.image}
           alt={frontmatter.imageAlt}
@@ -163,32 +182,53 @@ export default function ArticlePage({ params }: ArticlePageProps) {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-900/30 to-slate-900/70" />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/30 to-transparent" />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 w-full">
+        <div className="absolute inset-0 bg-gradient-to-b from-forest/40 via-forest/30 to-forest/80" />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-14 w-full">
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-2 text-xs text-white/50 mb-5">
+            <Link href="/" className="hover:text-white/80 transition-colors">Home</Link>
+            <span>/</span>
+            <Link href="/articles" className="hover:text-white/80 transition-colors">Articles</Link>
+            <span>/</span>
+            <span className="text-white/70 line-clamp-1">{frontmatter.title}</span>
+          </nav>
+
+          {/* Tags */}
           {frontmatter.tags && (
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="flex flex-wrap gap-2 mb-5">
               {frontmatter.tags.map((tag: string) => (
                 <span
                   key={tag}
-                  className="inline-block px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-xs font-medium text-white/90 border border-white/20"
+                  className="inline-block px-3 py-1 bg-gold text-forest text-xs font-semibold uppercase tracking-wider"
                 >
                   {tag}
                 </span>
               ))}
             </div>
           )}
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight drop-shadow-sm">
+
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-white leading-tight">
             {frontmatter.title}
           </h1>
-          <p className="mt-4 text-lg text-white/90 max-w-2xl drop-shadow-sm">
+          <p className="mt-4 text-base text-white/80 max-w-2xl leading-relaxed">
             {frontmatter.description}
           </p>
+          <div className="mt-4 flex items-center gap-3 text-xs text-white/50">
+            <time dateTime={frontmatter.date}>
+              {new Date(frontmatter.date).toLocaleDateString("en-US", {
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              })}
+            </time>
+            <span>·</span>
+            <span>Shirin Abplanalp</span>
+          </div>
         </div>
       </section>
 
-      {/* Article Content — explicit white background matches homepage sections */}
-      <article className="py-16 md:py-24 bg-white">
+      {/* Article Content */}
+      <article className="py-16 md:py-24 bg-cream">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <MDXRemote source={content} components={mdxComponents} />
         </div>
@@ -198,28 +238,22 @@ export default function ArticlePage({ params }: ArticlePageProps) {
       <AuthorBio />
 
       {/* Bottom CTA */}
-      <section className="py-16 bg-pine-50 border-t border-pine-100">
+      <section className="py-16 md:py-20 bg-forest">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-slate-950 mb-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-4">
+            Ready to Make the Move?
+          </p>
+          <h2 className="font-display text-3xl md:text-4xl font-semibold text-white mb-4">
             Ready to See It for Yourself?
           </h2>
-          <p className="text-lg text-slate-700 mb-8">
-            Connect with your Relocation Scout and start exploring Northern Idaho.
+          <p className="text-base text-white/70 mb-8">
+            Connect with Shirin and start exploring Northern Idaho.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center px-8 py-4 bg-pine-600 text-white font-semibold text-lg rounded-xl hover:bg-pine-700 transition-all shadow-lg shadow-pine-600/25"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gold text-forest font-semibold text-base tracking-wide hover:bg-gold-500 transition-colors"
           >
             Start Your Relocation
-            <svg
-              className="w-5 h-5 ml-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
           </Link>
         </div>
       </section>

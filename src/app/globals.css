@@ -3,15 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0f1419;
-    --foreground: #e8e6e3;
-  }
+  --background: #F8F5F0;
+  --foreground: #2C2C2C;
+  --cream: #F8F5F0;
+  --forest: #1C2B1E;
+  --gold: #C9A84C;
+  --sage: #8A9E8C;
+  --charcoal: #2C2C2C;
 }
 
 body {
@@ -28,28 +26,34 @@ body {
 }
 
 @layer components {
+  /* Article body prose */
   .prose-basecamp h1 {
-    @apply font-display text-4xl md:text-5xl font-bold tracking-tight text-slate-950;
+    @apply font-display text-4xl md:text-5xl font-semibold tracking-tight text-forest mt-0 mb-8;
   }
 
   .prose-basecamp h2 {
-    @apply font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-950 mt-20 mb-6;
+    @apply font-display text-3xl md:text-4xl font-semibold tracking-tight text-forest mt-20 mb-6;
   }
 
   .prose-basecamp h3 {
-    @apply font-display text-2xl font-bold text-slate-950 mt-12 mb-4;
+    @apply font-display text-2xl font-semibold text-forest mt-12 mb-4;
   }
 
   .prose-basecamp p {
-    @apply text-lg leading-relaxed text-slate-900 mb-6;
+    @apply text-lg leading-relaxed text-[#2C2C2C] mb-6;
   }
 
   .prose-basecamp ul {
-    @apply list-disc list-inside space-y-2 text-slate-900 mb-6;
+    @apply list-disc list-inside space-y-2 text-[#2C2C2C] mb-6;
   }
 
   .prose-basecamp blockquote {
-    @apply border-l-4 border-pine-500 pl-6 italic text-slate-700 my-10;
+    @apply border-l-4 border-gold pl-6 italic text-[#2C2C2C] my-10;
+  }
+
+  /* Gold underline accent */
+  .gold-rule {
+    @apply border-l-4 border-gold;
   }
 }
 
@@ -58,7 +62,25 @@ body {
     text-wrap: balance;
   }
 
-  /* Scroll-triggered fade-in for landing pages */
+  /* Scroll-triggered reveal animations */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* Legacy az-animate for landing pages */
   .az-animate {
     opacity: 0;
     transform: translateY(28px);

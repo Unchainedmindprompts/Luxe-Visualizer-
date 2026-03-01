@@ -151,7 +151,10 @@ export default function ArizonaContent() {
             </h1>
             <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed mb-10 font-dm-sans">
               Northern Idaho is where Phoenix Valley families escape the heat
-              &mdash; and end up staying all summer.
+              &mdash; and end up staying all summer. Whether you&rsquo;re
+              dreaming of a summer escape, a second home, or a permanent move
+              &mdash; if you&rsquo;ve ever felt trapped by the heat, this is
+              for you.
             </p>
             <a
               href={PHONE_HREF}
@@ -210,7 +213,7 @@ export default function ArizonaContent() {
               it&nbsp;&mdash; we need to get out of here.&rdquo;
             </p>
             <footer className="mt-4 text-xs text-slate-400 uppercase tracking-wider font-dm-sans">
-              &mdash; Mark &amp; Shirin &middot; Mesa, AZ &middot; 2023&ndash;2025
+              &mdash; Shirin Abplanalp &middot; Mesa, AZ &middot; 2023&ndash;2025
             </footer>
           </blockquote>
 

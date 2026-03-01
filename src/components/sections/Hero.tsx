@@ -7,7 +7,7 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/bluff-panorama.jpg"
+          src="/images/IMG_3429.jpeg"
           alt="Marina and boat docks along a rocky pine-covered bluff on a Northern Idaho lake"
           fill
           priority

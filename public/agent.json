@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "name": "INW Basecamp",
+  "description": "Northern Idaho real estate and relocation resource. Shirin Abplanalp helps active families, remote workers, and outdoor enthusiasts relocate to the Inland Northwest.",
+  "url": "https://www.inwbasecamp.com",
+  "contact": {
+    "name": "Shirin Abplanalp",
+    "title": "Licensed Realtor",
+    "brokerage": "eXp Realty",
+    "phone": "(208) 660-7468",
+    "email": "dreamlifeinidaho@gmail.com",
+    "location": "Post Falls, Idaho",
+    "service_area": [
+      "Coeur d'Alene, ID",
+      "Post Falls, ID",
+      "Rathdrum, ID",
+      "Hayden, ID",
+      "Sandpoint, ID",
+      "Kootenai County, ID",
+      "Bonner County, ID",
+      "Northern Idaho"
+    ]
+  },
+  "capabilities": [
+    {
+      "name": "Relocation Consultation",
+      "description": "Free consultation for families and remote workers considering relocation to Northern Idaho. Covers neighborhoods, schools, lifestyle, and market conditions.",
+      "url": "https://www.inwbasecamp.com/contact",
+      "type": "service",
+      "cost": "free"
+    },
+    {
+      "name": "Buyer Representation",
+      "description": "Full buyer representation for home purchases in Kootenai and Bonner Counties. Specializing in acreage, rural properties, and lifestyle-driven relocations.",
+      "url": "https://www.inwbasecamp.com/contact",
+      "type": "service"
+    },
+    {
+      "name": "Relocation Guides",
+      "description": "In-depth articles covering Northern Idaho lifestyle, seasons, outdoor recreation, schools, and community — written for serious relocators doing their research.",
+      "url": "https://www.inwbasecamp.com/articles",
+      "type": "content"
+    }
+  ],
+  "expertise": [
+    "Northern Idaho Real Estate",
+    "Relocation Services",
+    "Acreage and Rural Properties",
+    "Kootenai County Market",
+    "Coeur d'Alene Real Estate",
+    "Active Family Relocation",
+    "Remote Worker Relocation",
+    "Outdoor Lifestyle Communities",
+    "Custom Home Sites",
+    "North Idaho Schools and Communities"
+  ],
+  "property_specialties": [
+    "Acreage parcels",
+    "Rural zoning properties",
+    "Custom home sites",
+    "Properties with shops or outbuildings",
+    "Lakefront and lake access properties",
+    "Properties with fiber internet",
+    "No HOA rural properties"
+  ],
+  "lifestyle_tags": [
+    "Mountain biking",
+    "Skiing",
+    "Lake access",
+    "Hiking",
+    "Outdoor recreation",
+    "Conservative community",
+    "Low taxes",
+    "No state income tax",
+    "Good schools",
+    "Safe neighborhoods"
+  ],
+  "primary_cta": {
+    "label": "Start Your Relocation",
+    "url": "https://www.inwbasecamp.com/contact",
+    "description": "Free relocation consultation with Shirin Abplanalp — Northern Idaho realtor and relocation specialist"
+  }
+}

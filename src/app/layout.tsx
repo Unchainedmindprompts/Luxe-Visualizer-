@@ -13,7 +13,7 @@ import {
 // Self-hosted at build time via next/font — eliminates render-blocking Google Fonts request
 const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600", "700"],
   style: ["normal", "italic"],
   display: "swap",
   variable: "--font-cormorant",
@@ -21,7 +21,7 @@ const cormorantGaramond = Cormorant_Garamond({
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["400", "500", "600"],
   style: ["normal", "italic"],
   display: "swap",
   variable: "--font-dm-sans",

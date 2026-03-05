@@ -11,6 +11,28 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ["@mdx-js/react"],
   },
+  async headers() {
+    return [
+      {
+        source: '/:path*.(jpg|jpeg|png|gif|webp|avif|svg|ico|woff|woff2)',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+      {
+        source: '/llms.txt',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=86400' },
+        ],
+      },
+      {
+        source: '/agent.json',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=86400' },
+        ],
+      },
+    ]
+  },
   async redirects() {
     return [
       // Redirect non-www to www (permanent 301)

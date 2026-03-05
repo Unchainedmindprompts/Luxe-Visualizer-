@@ -5,6 +5,8 @@ import Image from "next/image";
 
 const PHONE = "(208) 660-7468";
 const PHONE_HREF = "tel:+12086607468";
+const EMAIL = "dreamlifeinidaho@gmail.com";
+const EMAIL_HREF = "mailto:dreamlifeinidaho@gmail.com";
 
 /* ── tiny inline SVG icons ──────────────────────────────────────────── */
 function PlaneIcon() {
@@ -543,7 +545,7 @@ export default function ArizonaContent() {
               <br /> What&rsquo;s Waiting?
             </h2>
             <p className="text-white/65 text-lg leading-relaxed mb-12">
-              Call or text Shirin directly. No forms, no funnels &mdash; just
+              Call or email Shirin directly. No forms, no funnels &mdash; just
               a real conversation about what Northern Idaho looks like for you.
             </p>
           </div>
@@ -560,8 +562,16 @@ export default function ArizonaContent() {
               {PHONE}
             </a>
             <p className="text-white/35 text-xs uppercase tracking-[0.18em] mb-10 font-dm-sans">
-              Call or Text &middot; Shirin Abplanalp &middot; eXp Realty
+              Call or Text &middot; Shirin Abplanalp
             </p>
+            <hr className="border-white/20 mb-8 max-w-[60px] mx-auto" />
+            <a
+              href={EMAIL_HREF}
+              className="block text-white/80 hover:text-white underline underline-offset-4 text-base mb-8 font-dm-sans transition-colors"
+              aria-label={`Email Shirin at ${EMAIL}`}
+            >
+              {EMAIL}
+            </a>
             <a
               href={PHONE_HREF}
               className="inline-block bg-[#d4a94a] text-[#1a3a2a] px-10 py-5 text-xs font-bold tracking-[0.15em] uppercase hover:bg-[#c49a3a] transition-colors shadow-xl font-dm-sans"
